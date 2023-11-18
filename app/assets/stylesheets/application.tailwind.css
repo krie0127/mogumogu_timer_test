@@ -11,3 +11,18 @@
 }
 
 */
+.icon-text {
+  @apply text-xs;
+}
+
+label img {
+  margin: 3px;
+  padding: 8px;
+}
+
+.selection-group input[type="radio"]:checked+label img {
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid #7c4414;
+  border-radius: 5px;
+}

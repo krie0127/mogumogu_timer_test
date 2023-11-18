@@ -49,6 +49,8 @@ gem 'rails-i18n'
 
 gem 'line-bot-api'
 
+gem 'sorcery'
+
 # 画像サイズ
 gem 'mini_magick'
 # ファイルのアップロード機能
@@ -63,6 +65,7 @@ gem 'dotenv-rails'
 gem 'gon'
 # バックグラウンド
 gem 'byebug'
+gem 'sassc'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
