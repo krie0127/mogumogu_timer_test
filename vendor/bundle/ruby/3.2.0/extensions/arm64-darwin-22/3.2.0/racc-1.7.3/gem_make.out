@@ -1,0 +1,18 @@
+current directory: /Users/rie/mogumogu/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+/Users/rie/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/rie/mogumogu/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231118-49368-j72u4t sitelibdir\=./.gem.20231118-49368-j72u4t clean
+
+current directory: /Users/rie/mogumogu/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231118-49368-j72u4t sitelibdir\=./.gem.20231118-49368-j72u4t
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/rie/mogumogu/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231118-49368-j72u4t sitelibdir\=./.gem.20231118-49368-j72u4t install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20231118-49368-j72u4t/racc
+
+current directory: /Users/rie/mogumogu/vendor/bundle/ruby/3.2.0/gems/racc-1.7.3/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20231118-49368-j72u4t sitelibdir\=./.gem.20231118-49368-j72u4t clean
