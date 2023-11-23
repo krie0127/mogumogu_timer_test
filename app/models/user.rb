@@ -8,4 +8,13 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 255 }
+  validates :line_id, presence: true, unless: :skip_line_id_validation
+
+  def skip_line_id_validation
+    # ここで条件を記述し、ログイン時にはバリデーションをスキップするようにします
+    # 例えば、ログイン時に line_id を必要としない場合に true を返すような条件を記述します
+    # 例: self.new_record? || some_condition_met?
+    line_id.blank?
+  end
+
 end
