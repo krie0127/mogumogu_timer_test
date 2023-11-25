@@ -1,6 +1,6 @@
-class CreateStopwathes < ActiveRecord::Migration[7.1]
+class CreateStopwatches < ActiveRecord::Migration[7.1]
   def change
-    create_table :stopwathes do |t|
+    create_table :stopwatches do |t|
       t.references :user, null: false, foreign_key: true  # ユーザーとの関連付け
       t.integer :duration, null: false
       t.datetime :start_time, null: false  # ストップウォッチ開始時刻

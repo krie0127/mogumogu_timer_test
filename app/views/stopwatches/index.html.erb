@@ -3,17 +3,48 @@
   <head>
     <title>タイマー</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    # <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <%= javascript_pack_tag 'stopwatches/index' %>
   </head>
   <body>
+    <%= @seconds %>
     <h1>タイマー</h1>
     <p id="timer">00:00:00</p>
-    <button id="start">スタート</button>
-    <button id="stop">ストップ</button>
-    <button id="reset">リセット</button>
-    <%= javascript_pack_tag 'timers/index' %>
+    <button id="startTimer" onclick="startTimer()">スタート</button>
+    <button id="stopTimer">ストップ</button>
+    <button id="resetTimer">リセット</button>
+    <button id="saveTimer">登録</button>
+    <button id="makeRequest" onclick="onClickPost()">自分で作ってね</button>
+    
 
     <div id="user-info" data-user-id="ユーザーのID"></div>
     <div id="beat-info" data-beat-id="ビートのID"></div>
+
+    <button id="test" onclick="hello()" >call hello</button>
+    <button id="hoge" onclick="getPosts()" >call getPosts func</button>
+
+   <script src="javascript/packs/index.js"></script>
+   <script>
+    console.log("りえはがんばった")
+    const hello = () => {
+      console.log("Hello")
+    }
+    const url = "https://jsonplaceholder.typicode.com/posts"
+    const getPosts = async () => {
+      const res = await fetch(url)
+      const data = await res.json()
+      await console.log(data)
+   }
+   const onClickPost = () => {
+    console.log("post")
+    let hours = 0
+    let minutes = 4
+    let seconds = 28
+    const obj = {hours: hours, minutes: minutes, seconds: seconds}
+    console.log(`タイマーが示す時間は${obj.hours}時間${obj.minutes}分${obj.seconds}秒やで`)
+    const body = JSON.stringify(obj)
+    console.log(body)
+   }
+   </script>
   </body>
 </html>
