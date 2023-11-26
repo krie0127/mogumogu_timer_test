@@ -2,15 +2,22 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 let intervalId;
+let userId;
+
+console.log("call index.js")
+console.log(window)
 
 function startTimer() {
-  console.log("startTime")
   intervalId = setInterval(updateTimer, 1000);
 }
+
+window.startTimer = startTimer
 
 function stopTimer() {
   clearInterval(intervalId);
 }
+
+window.stopTimer = stopTimer
 
 function resetTimer() {
   clearInterval(intervalId);
@@ -19,6 +26,8 @@ function resetTimer() {
   hours = 0;
   document.getElementById("timer").innerText = "00:00:00";
 }
+
+window.resetTimer = resetTimer
 
 function updateTimer() {
   seconds++;
@@ -36,27 +45,24 @@ function updateTimer() {
   document.getElementById("timer").innerText = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
 
+window.updateTimer = updateTimer
+
 // document.getElementById("start").addEventListener("click", startTimer);
 // document.getElementById("stop").addEventListener("click", stopTimer);
 // document.getElementById("reset").addEventListener("click", resetTimer);
 // document.getElementById("saveTime").addEventListener("click", saveTimerDataToDB);
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  document.getElementById("startTimer").addEventListener("click", startTimer);
+  // document.getElementById("startTimer").addEventListener("click", startTimer);
   document.getElementById("stopTimer").addEventListener("click", stopTimer);
   document.getElementById("resetTimer").addEventListener("click", resetTimer);
   document.getElementById("saveTimer").addEventListener("click", saveTimerDataToDB);
 });
 
-// ユーザーIDとビートIDを取得
-const userId = document.getElementById('user-info').dataset.userId;
-const beatId = document.getElementById('beat-info').dataset.beatId;
-
 // タイマーが停止されたときに呼び出される関数
 function saveTimerDataToDB() {
   const data = {
     user_id: userId,
-    beat_id: beatId,
     hours: hours,
     minutes: minutes,
     seconds: seconds
@@ -73,15 +79,16 @@ function saveTimerDataToDB() {
     // });
 }
 
-const onClickPost = () => {
+function onClickPost() {
+  console.log("call onClickPost")
   const url = "http://localhost:3000"
   const obj = {hours: hours, minutes: minutes, seconds: seconds}
   console.log(JSON.stringify(obj))
   const res = fetch(url, {
   method: "POST",
   headers: {
-   "Content-Type": "application/json",
-   },
+    "Content-Type": "application/json",
+    },
   body: JSON.stringify(obj)
   })
   const data = res.json()
@@ -89,9 +96,9 @@ const onClickPost = () => {
   console.log(data)
 }
 
-$.ajax({
-  type: "POST",
-  url: "/stopwatches", // Railsのルーティングに合わせてパスを設定
-  data: { stopwatch: { time: timeData } }, // timeDataはストップウォッチの時間データ
-  dataType: "json"
-});
+// TODO: ファイルを見やすくする（変数宣言と関数宣言を見やすくするために分割する）
+// * 変数宣言
+
+// * 関数宣言
+
+// * window オブジェクトに関数を登録する

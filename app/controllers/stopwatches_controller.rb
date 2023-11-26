@@ -21,13 +21,12 @@ class StopwatchesController < ApplicationController
   def update
     @time = Stopwatch.find(params[:id]) # 特定のタイムレコードを取得
   
-    if @time.update(time_params)
+    if @time.update(stopwatch_params)
       redirect_to stopwatches_path, notice: 'Time record was successfully updated.'
     else
       render :edit
     end
   end
-  
 
   private
 
@@ -35,4 +34,3 @@ class StopwatchesController < ApplicationController
     params.require(:stopwatch).permit(:time)
   end
 end
-   
