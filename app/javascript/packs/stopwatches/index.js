@@ -47,6 +47,25 @@ function updateTimer() {
 
 window.updateTimer = updateTimer
 
+function onClickPost() {
+  console.log("call onClickPost")
+  const url = "http://localhost:3000/stopwatches"
+  const obj = {hours: hours, minutes: minutes, seconds: seconds}
+  console.log(JSON.stringify(obj))
+  const res = fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    },
+  body: JSON.stringify(obj)
+  })
+  const data = res.json()
+  
+  console.log(data)
+}
+
+window.onClickPost = onClickPost
+
 // document.getElementById("start").addEventListener("click", startTimer);
 // document.getElementById("stop").addEventListener("click", stopTimer);
 // document.getElementById("reset").addEventListener("click", resetTimer);
@@ -79,22 +98,7 @@ function saveTimerDataToDB() {
     // });
 }
 
-function onClickPost() {
-  console.log("call onClickPost")
-  const url = "http://localhost:3000"
-  const obj = {hours: hours, minutes: minutes, seconds: seconds}
-  console.log(JSON.stringify(obj))
-  const res = fetch(url, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    },
-  body: JSON.stringify(obj)
-  })
-  const data = res.json()
-  
-  console.log(data)
-}
+
 
 // TODO: ファイルを見やすくする（変数宣言と関数宣言を見やすくするために分割する）
 // * 変数宣言
