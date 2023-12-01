@@ -79,7 +79,7 @@ test:
 
 production:
   <<: *default
-  database: mogumogu_production
-  username: mogumogu
-  password: <%= ENV["MOGUMOGU_DATABASE_PASSWORD"] 
-  # url: <%= ENV['DATABASE_URL'] %>
+  # database: mogumogu_production
+  # username: mogumogu
+  # password: <%= ENV["MOGUMOGU_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
