@@ -2,18 +2,39 @@
 <html>
   <head>
     <title>タイマー</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="app/javascript/stylesheets/stopwatches/index.css">
+    <%= javascript_pack_tag 'stopwatches/index' %>
   </head>
   <body>
     <h1>タイマー</h1>
     <p id="timer">00:00:00</p>
-    <button id="start">スタート</button>
-    <button id="stop">ストップ</button>
-    <button id="reset">リセット</button>
-    <%= javascript_pack_tag 'timers/index' %>
-
+    <button id="startTimer" onclick="startTimer()">スタート</button>
+    <button id="stopTimer" onclick="stopTimer()">ストップ</button>
+    <button id="resetTimer" onclick="resetTimer()">リセット</button>
+    <button id="saveTimer" onclick="onClickPost()">登録</button>
+    
     <div id="user-info" data-user-id="ユーザーのID"></div>
     <div id="beat-info" data-beat-id="ビートのID"></div>
+
+    <script src="app/javascript/packs/stopwatches/index.js"></script>
+    <script>
+      console.log("hello")
+        const url = "https://jsonplaceholder.typicode.com/posts"
+        const getPosts = async () => {
+          const res = await fetch(url)
+          const data = await res.json()
+          await console.log(data)
+      }
+      // # const onClickPost = () => {
+      // #   console.log("post")
+      // #   let hours = 0
+      // #   let minutes = 4
+      // #   let seconds = 28
+      // #   const obj = {hours: hours, minutes: minutes, seconds: seconds}
+      // #   console.log(`タイマーが示す時間は${obj.hours}時間${obj.minutes}分${obj.seconds}秒やで`)
+      // #   const body = JSON.stringify(obj)
+      // #   console.log(body)
+      // #  }
+    </script>
   </body>
 </html>

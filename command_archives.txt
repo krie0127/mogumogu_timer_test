@@ -1,0 +1,8 @@
+ 1062  ./bin/dev
+ 1063  ./bin/dev
+ 1064  history
+ 1065  history | head -n 1 > command_archives.txt
+ 1066  history | head -n 5 > command_archives.txt
+ 1054  bundle install
+ 1055  bin/webpack-dev-server
+ 1056  bin/webpack-dev-server

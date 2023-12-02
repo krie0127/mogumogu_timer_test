@@ -24,16 +24,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_25_151045) do
     t.index ["user_id"], name: "index_stopwatches_on_user_id"
   end
 
-  create_table "stopwathes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "duration", null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_stopwathes_on_user_id"
-  end
-
   create_table "timers", force: :cascade do |t|
     t.integer "duration", default: 0, null: false
     t.datetime "started_at", precision: nil
@@ -52,6 +42,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_25_151045) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "stopwatches", "users"
   add_foreign_key "stopwathes", "users"
 end
