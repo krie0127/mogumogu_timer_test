@@ -87,19 +87,6 @@ function saveTimerDataToDB() {
     seconds: seconds
   };
 
-// axios.post('/scores', data)
-    // .then(response => {
-    //   console.log('Data saved to database:', response.data);
-      // サーバーにデータが保存された後の処理
-    // })
-    // .catch(error => {
-    //   console.error('Error saving data:', error);
-      // エラー時の処理
-    // });
-}
-
-
-
 // TODO: ファイルを見やすくする（変数宣言と関数宣言を見やすくするために分割する）
 // * 変数宣言
 
