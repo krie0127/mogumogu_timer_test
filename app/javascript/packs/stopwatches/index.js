@@ -85,11 +85,10 @@ function saveTimerDataToDB() {
     hours: hours,
     minutes: minutes,
     seconds: seconds
-  };
+  }};
 
-// TODO: ファイルを見やすくする（変数宣言と関数宣言を見やすくするために分割する）
-// * 変数宣言
+  // 変数宣言
 
-// * 関数宣言
+// 関数宣言
 
-// * window オブジェクトに関数を登録する
+// window オブジェクトに関数を登録する
