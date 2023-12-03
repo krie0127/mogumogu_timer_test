@@ -87,7 +87,7 @@ function saveTimerDataToDB() {
     seconds: seconds
   }};
 
-  // 変数宣言
+// 変数宣言
 
 // 関数宣言
 
