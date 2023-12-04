@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@rails/webpacker": "5.4.4",
     "daisyui": "^4.4.0"
   },
   "devDependencies": {
