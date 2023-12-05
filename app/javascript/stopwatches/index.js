@@ -60,9 +60,35 @@ function onClickPost() {
   body: JSON.stringify(obj)
   })
   const data = res.json()
-  
+
   console.log(data)
 }
+
+// async function onClickPost() {
+//   console.log("call onClickPost");
+//   const url = "http://localhost:3000/stopwatches";
+//   const obj = {hours: hours, minutes: minutes, seconds: seconds};
+//   console.log(JSON.stringify(obj));
+
+//   try {
+//     const res = await fetch(url, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(obj)
+//     });
+
+//     if (!res.ok) {
+//       throw new Error('サーバーからの応答がOKではありません');
+//     }
+
+//     const data = await res.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error('エラーが発生しました:', error);
+//   }
+// }
 
 window.onClickPost = onClickPost
 
