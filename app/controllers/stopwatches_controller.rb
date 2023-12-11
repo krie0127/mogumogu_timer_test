@@ -1,6 +1,11 @@
 class StopwatchesController < ApplicationController
 
   def create
+
+    hours = params[:hours]
+    minutes = params[:minutes]
+    seconds = params[:seconds]
+
     @time = Stopwatch.new(stopwatch_params)
   
     if @time.save
@@ -30,7 +35,11 @@ class StopwatchesController < ApplicationController
 
   private
 
+  def set_stopwatch
+    @stopwatch = Stopwatch.find(params[:id])
+  end
+
   def stopwatch_params
-    params.require(:stopwatch).permit(:time)
+    params.require(:stopwatch).permit(:hours, :minutes, :seconds) 
   end
 end

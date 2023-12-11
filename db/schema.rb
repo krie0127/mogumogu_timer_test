@@ -42,5 +42,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_25_151045) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "stopwatches", "users"
+  add_foreign_key "stopwathes", "users"
 end

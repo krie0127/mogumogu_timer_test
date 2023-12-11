@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>タイマー</title>
-    <link rel="stylesheet" href="app/javascript/stylesheets/stopwatches/index.css">
-    <%= javascript_pack_tag 'stopwatches/index' %>
+    <%= csrf_meta_tags %>
+
   </head>
   <body>
     <h1>タイマー</h1>
@@ -16,7 +16,7 @@
     <div id="user-info" data-user-id="ユーザーのID"></div>
     <div id="beat-info" data-beat-id="ビートのID"></div>
 
-    <script src="app/javascript/packs/stopwatches/index.js"></script>
+    <script src="app/javascript/stopwatches/index.js"></script>
     <script>
       console.log("hello")
         const url = "https://jsonplaceholder.typicode.com/posts"
@@ -25,16 +25,10 @@
           const data = await res.json()
           await console.log(data)
       }
-      // # const onClickPost = () => {
-      // #   console.log("post")
-      // #   let hours = 0
-      // #   let minutes = 4
-      // #   let seconds = 28
-      // #   const obj = {hours: hours, minutes: minutes, seconds: seconds}
-      // #   console.log(`タイマーが示す時間は${obj.hours}時間${obj.minutes}分${obj.seconds}秒やで`)
-      // #   const body = JSON.stringify(obj)
-      // #   console.log(body)
-      // #  }
     </script>
   </body>
 </html>
+
+<% content_for :js do %>
+   <%= javascript_import_module_tag "stopwatches/index" %>
+ <% end %>
